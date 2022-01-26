@@ -14,14 +14,12 @@ transactions.get("/:index", (request, response) => {
 });
 
 transactions.delete("/:index", (request, response) => {
-  console.log(`Something was deleted`);
   const { index } = request.params;
   transactionArray.splice(index, 1);
   response.json(transactionArray);
 });
 
 transactions.post("/", (request, response) => {
-  console.log(`You're posted, hun`);
   transactionArray.push(request.body);
   response.status(201).json(transactionArray);
 });
